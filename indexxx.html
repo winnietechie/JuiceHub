@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshSqueeze | Premium Fruit Juices</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍊</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fresh-green': '#8BC34A',
+                        'vibrant-orange': '#FF9800',
+                        'pure-white': '#FFFFFF',
+                        'light-green': '#DCEDC8',
+                        'light-orange': '#FFE0B2',
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(139, 195, 74, 0.9) 0%, rgba(255, 152, 0, 0.85) 100%);
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #FF9800;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .fruit-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translatey(0px); }
+            50% { transform: translatey(-20px); }
+            100% { transform: translatey(0px); }
+        }
+        .bg-fruit-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF9800' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='6'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-sans bg-pure-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-fresh-green flex items-center justify-center mr-2">
+                    <span class="text-white text-xl">🍊</span>
+                </div>
+                <span class="text-2xl font-bold text-fresh-green">Fresh<span class="text-vibrant-orange">Squeeze</span></span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-700 hover:text-vibrant-orange font-medium">Home</a>
+                <a href="#products" class="nav-link text-gray-700 hover:text-vibrant-orange font-medium">Products</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-vibrant-orange font-medium">About</a>
+                <a href="#testimonials" class="nav-link text-gray-700 hover:text-vibrant-orange font-medium">Testimonials</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-vibrant-orange font-medium">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-full bg-light-green hover:bg-fresh-green text-fresh-green hover:text-white transition">
+                    <i data-feather="shopping-cart"></i>
+                </button>
+                <button class="md:hidden p-2 rounded-full bg-light-green text-fresh-green">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-16 pb-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-6xl font-display font-bold text-white mb-4">Nature's Sweetest <span class="text-vibrant-orange">Nectar</span></h1>
+                <p class="text-xl text-white mb-8">100% organic, cold-pressed juices bursting with flavor and nutrients. Experience the freshness in every sip.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#products" class="px-8 py-3 bg-vibrant-orange text-white rounded-full font-medium hover:bg-opacity-90 transition shadow-lg">Shop Now</a>
+                    <a href="#about" class="px-8 py-3 bg-white text-fresh-green rounded-full font-medium hover:bg-opacity-90 transition">Learn More</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="fruit-float">
+                    <img src="http://static.photos/food/640x360/25" alt="Fresh Juice" class="rounded-2xl shadow-2xl mx-auto">
+                </div>
+                <div class="absolute -top-4 -left-4 w-24 h-24 bg-vibrant-orange rounded-full opacity-20 fruit-float" style="animation-delay: 1s;"></div>
+                <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-fresh-green rounded-full opacity-20 fruit-float" style="animation-delay: 2s;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-fruit-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">Our <span class="text-fresh-green">Fresh</span> Selection</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Handcrafted with care, our juices are made from the finest organic fruits and vegetables.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-56 overflow-hidden">
+                        <img src="http://static.photos/food/640x360/10" alt="Orange Blast" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Orange Blast</h3>
+                        <p class="text-gray-600 mb-4">Sun-ripened oranges bursting with vitamin C and natural sweetness.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-vibrant-orange">$8.99</span>
+                            <button class="px-4 py-2 bg-fresh-green text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-56 overflow-hidden">
+                        <img src="http://static.photos/food/640x360/15" alt="Green Vitality" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Green Vitality</h3>
+                        <p class="text-gray-600 mb-4">Kale, spinach, apple, and lemon for a nutrient-packed energy boost.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-vibrant-orange">$9.99</span>
+                            <button class="px-4 py-2 bg-fresh-green text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-56 overflow-hidden">
+                        <img src="http://static.photos/food/640x360/20" alt="Berry Fusion" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Berry Fusion</h3>
+                        <p class="text-gray-600 mb-4">Mixed berries with a hint of mint for a refreshing antioxidant treat.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-vibrant-orange">$10.99</span>
+                            <button class="px-4 py-2 bg-fresh-green text-white rounded-full text-sm font-medium hover:bg-opacity-90 transition">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="inline-block px-8 py-3 border-2 border-fresh-green text-fresh-green rounded-full font-medium hover:bg-fresh-green hover:text-white transition">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-light-green">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <img src="http://static.photos/people/640x360/5" alt="Our Story" class="rounded-2xl shadow-xl">
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left" data-aos-delay="200">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-6">Our <span class="text-fresh-green">Story</span></h2>
+                    <p class="text-lg text-gray-700 mb-6">Founded in 2020, FreshSqueeze began with a simple mission: to bring the freshest, most nutritious juices to health-conscious consumers. Our founders, Sarah and Michael, were passionate about creating products that not only taste incredible but also fuel your body with natural goodness.</p>
+                    <p class="text-lg text-gray-700 mb-8">We source our ingredients from local organic farms, ensuring each bottle is packed with vitamins, minerals, and enzymes. Our cold-press process preserves nutrients and flavor, delivering a superior product that stands out from shelf-stable alternatives.</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-fresh-green rounded-full flex items-center justify-center">
+                            <i data-feather="leaf" class="text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">100% Organic</h4>
+                            <p class="text-gray-600">No pesticides, no additives</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-800 mb-4">What Our <span class="text-vibrant-orange">Customers</span> Say</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our satisfied juice lovers!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-light-orange p-8 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-vibrant-orange rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="star" class="text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Jessica T.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The Green Vitality juice has become my morning ritual. I feel energized and ready to tackle the day. Plus, it tastes amazing!"</p>
+                </div>
+                
+                <div class="bg-light-green p-8 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-fresh-green rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="heart" class="text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Marcus L.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"I've tried many juice brands, but FreshSqueeze stands out. The flavors are authentic, and I love that they use organic ingredients."</p>
+                </div>
+                
+                <div class="bg-light-orange p-8 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-vibrant-orange rounded-full flex items-center justify-center mr-4">
+                            <i data-feather="thumbs-up" class="text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sophia R.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The Berry Fusion is my absolute favorite! It's the perfect balance of sweet and refreshing. I order it weekly!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-fruit-pattern">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-fresh-green p-10 text-white">
+                        <h2 class="text-3xl font-display font-bold mb-6">Get in <span class="text-vibrant-orange">Touch</span></h2>
+                        <p class="mb-6">Have questions about our products or want to place a custom order? We'd love to hear from you!</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i data-feather="phone" class="mr-4"></i>
+                                <span>(555) 123-JUICE</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="mail" class="mr-4"></i>
+                                <span>hello@freshsqueeze.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="map-pin" class="mr-4"></i>
+                                <span>123 Fruit Lane, Orchard City</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-10">
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="name">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="email">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="message">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-fresh-green"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-vibrant-orange text-white py-3 rounded-lg font-medium hover:bg-opacity-90 transition">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-fresh-green flex items-center justify-center mr-2">
+                            <span class="text-white text-xl">🍊</span>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Fresh<span class="text-vibrant-orange">Squeeze</span></span>
+                    </div>
+                    <p class="text-gray-400">Bringing nature's goodness to your glass, one squeeze at a time.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-vibrant-orange transition">Home</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-vibrant-orange transition">Products</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-vibrant-orange transition">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-vibrant-orange transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-vibrant-orange transition">Orange Blast</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-vibrant-orange transition">Green Vitality</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-vibrant-orange transition">Berry Fusion</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-vibrant-orange transition">Seasonal Specials</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-vibrant-orange transition">
+                            <i data-feather="facebook" class="text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-vibrant-orange transition">
+                            <i data-feather="instagram" class="text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-vibrant-orange transition">
+                            <i data-feather="twitter" class="text-white"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">Subscribe to our newsletter for updates and offers</p>
+                    <div class="mt-2 flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 bg-gray-700 text-white rounded-l-lg focus:outline-none w-full">
+                        <button class="px-4 py-2 bg-vibrant-orange text-white rounded-r-lg hover:bg-opacity-90 transition">Join</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 FreshSqueeze. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize animations
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+        
+        // Initialize feather icons
+        feather.replace();
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
